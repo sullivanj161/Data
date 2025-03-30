@@ -1,3 +1,8 @@
+
+
+*****IMPORTANT COMMANDS USED ARE DOCUMENTED IN THIS .MD*********
+
+
 1. Build it - Describe your RAID setup with supporting screenshots of your AWS EBS volumes attached to the instance and the status of your built RAID managed by mdadm on your AWS instance.
 When building my RAID 6, this would require atleast 4 functioning disks. The goal of a RAID 6 array setup is to use a double-parity method of storage as opposed to just using one method of storage. It essentially allows for two disk faults to occur in one single RAID.
 In AWS, I have four disks that are all attached to my one EC2 instance.
@@ -31,7 +36,7 @@ Steps taken - The steps I did to create my RAID array were as follows
       /dev/md0 the name for the RAID array
       --level=6 signifies the level the RAID will be set up in
       --raid-devices=4
-      /dev/xvdf /dev/xvdg /dev/xvdh /dev/xvdi - the disks that will be created and initialized for RAID 6
+      */dev/xvdf /dev/xvdg /dev/xvdh /dev/xvdi* - the disks that will be created and initialized for RAID 6
 
       4. Monitor the progress
          In order to check in on the progres of the RAID setup, I issued a cat /proc/mdstat
